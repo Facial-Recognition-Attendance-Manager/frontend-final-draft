@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-*
-{
+
+* {
     margin: 0%;
     padding: 0%;
 }
 
-#loginArea, #wrongPasswordArea
-{
+#fileUploadArea,
+#loadingArea,
+#wrongPasswordArea {
     display: none;
 }
 
-body
-{
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #1E0354;
 }
@@ -61,22 +61,20 @@ body
     }
 }
 
-.loadingArea .text
-{
+.loadingArea .text {
     margin-top: 4%;
     text-align: center;
     font-weight: bold;
     color: white;
 }
 
-.loginArea
-{
-    background-color: rgba(255,255,255,0.2);
+.formArea {
+    background-color: rgba(255, 255, 255, 0.2);
     width: 40%;
     border-radius: 15px;
 }
-.loginArea .heading
-{
+
+.formArea .heading {
     width: 100%;
     text-align: center;
     padding-top: 10%;
@@ -85,28 +83,28 @@ body
     font-weight: bold;
     color: white;
 }
-.loginArea .inputArea
-{
+
+.formArea .inputArea {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-bottom: 2%;
 }
-.loginArea .inputArea .label
-{
+
+.formArea .inputArea .label {
     width: 40%;
     text-align: right;
     margin-right: 10%;
     font-size: 150%;
     color: white;
 }
-.loginArea .inputArea .inputs
-{
+
+.formArea .inputArea .inputs {
     width: 49%;
     margin-left: 1%;
 }
-.loginArea .inputArea .inputs input
-{
+
+.formArea .inputArea .inputs input {
     border: none;
     background-color: transparent;
     border-bottom: 1px solid white;
@@ -115,15 +113,15 @@ body
     outline: none;
     color: white;
 }
-.loginArea .buttonArea
-{
+
+.formArea .buttonArea {
     display: flex;
     justify-content: center;
     padding-bottom: 10%;
     padding-top: 2%;
 }
-.loginArea .buttonArea button
-{
+
+.formArea .buttonArea button {
     font-size: 150%;
     color: white;
     background-color: #008037;
@@ -131,8 +129,71 @@ body
     padding-top: 1%;
     padding-bottom: 1%;
     border: none;
+    border-radius: 5px;
 }
-.loginArea .buttonArea button:hover
-{
+
+.formArea .buttonArea button:hover {
     background-color: #00421d;
+}
+
+.fileUploadArea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.fileUploadArea .left {
+    width: 60%;
+}
+
+.fileUploadArea .left .buttonArea {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.fileUploadArea .left .buttonArea button {
+    font-size: 150%;
+    color: white;
+    background-color: #008037;
+    width: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: none;
+    border-radius: 5px;
+}
+
+.fileUploadArea .left .buttonArea button:hover{
+    background-color: #00421d;
+}
+
+.fileUploadArea .left .uploadedImage {
+    width: 100%;
+    padding-top: 5%;
+}
+
+.fileUploadArea .left .uploadedImage .imageArea {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.fileUploadArea .left .uploadedImage .imageArea img {
+    width: 100%;
+}
+
+.fileUploadArea .right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileUploadArea .right .formArea {
+    width: 70%;
+}
+
+.fileUploadArea .right .formArea .buttonArea button {
+    width: 30%;
 }

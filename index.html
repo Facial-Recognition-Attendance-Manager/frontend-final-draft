@@ -9,12 +9,12 @@
     <title>FRAM</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="loadingArea" id="loadingArea">
             <div class="loader"></div>
             <div class="text">Loading..</div>
         </div>
-        <div class="loginArea" id="loginArea">
+        <div class="formArea" id="loginArea">
             <div class="heading">
                 Login for FRAM
             </div>
@@ -28,7 +28,7 @@
                 <button>Login</button>
             </div>
         </div>
-        <div class="loginArea" id="wrongPasswordArea">
+        <div class="formArea" id="wrongPasswordArea">
             <div class="heading">
                 Wrong Password
             </div>
@@ -37,5 +37,36 @@
             </div>
         </div>
     </div>
+    <div class="fileUploadArea" id="fileUploadArea">
+        <div class="left">
+            <div class="buttonArea">
+                <button id="upload-btn">Upload</button>
+            </div>
+            <input type="file" id="file-input" style="display:none;">
+            <div class="uploadedImage">
+                <div class="imageArea">
+                    <img id="img-preview" style="display:none;">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="formArea">
+                <div class="heading">
+                    Enter Details
+                </div>
+                <div class="inputArea">
+                    <div class="label">Date</div><div class="inputs"><input type="date"></div>
+                </div>
+                <div class="inputArea">
+                    <div class="label">Class Name</div><div class="inputs"><input type="text"></div>
+                </div>
+                <div class="buttonArea">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
