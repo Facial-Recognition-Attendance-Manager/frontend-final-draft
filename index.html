@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>FRAM</title>
 </head>
 <body>
@@ -19,13 +20,13 @@
                 Login for FRAM
             </div>
             <div class="inputArea">
-                <div class="label">Department ID</div><div class="inputs"><input type="text"></div>
+                <div class="label">Department ID</div><div class="inputs"><input type="text" id="dept_id"></div>
             </div>
             <div class="inputArea">
-                <div class="label">Password</div><div class="inputs"><input type="password"></div>
+                <div class="label">Password</div><div class="inputs"><input type="password" id="password"></div>
             </div>
             <div class="buttonArea">
-                <button>Login</button>
+                <button onclick="login()">Login</button>
             </div>
         </div>
         <div class="formArea" id="wrongPasswordArea">
