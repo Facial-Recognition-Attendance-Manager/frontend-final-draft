@@ -5,7 +5,7 @@
     padding: 0%;
 }
 
-#loadingArea, #loginArea, #wrongPasswordArea
+#loginArea, #wrongPasswordArea
 {
     display: none;
 }
@@ -48,7 +48,8 @@ body
 .loader:after {
     width: 85%;
     height: 85%;
-    background-color: #1E0354;
+    background-image: url("../images/favicon.png");
+    background-size: cover;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
