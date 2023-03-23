@@ -5,8 +5,9 @@
     padding: 0%;
 }
 
+#loginArea,
 #fileUploadArea,
-#loadingArea,
+/* #loadingArea, */
 #wrongPasswordArea {
     display: none;
 }
