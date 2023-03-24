@@ -1,5 +1,8 @@
-const imageUpload = document.getElementById('imageUpload')
-
+const uploadBtn = document.getElementById('upload-btn');
+const imageUpload = document.getElementById('file-input');
+uploadBtn.addEventListener('click', () => {
+  imageUpload.click();
+});
 Promise.all([
   faceapi.nets.faceRecognitionNet.loadFromUri('./packages/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('./packages/models'),
@@ -7,16 +10,14 @@ Promise.all([
 ]).then(start)
 
 async function start() {
-  
-  const container = document.createElement('div')
-  container.style.position = 'relative'
-  document.body.append(container)
+
+  const container = document.getElementById('imageArea');
   const labeledFaceDescriptors = await loadLabeledImages()
   const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
   let image
   let canvas
-  document.getElementById('loadingArea').style.display="none";
-  document.getElementById('loginArea').style.display="block";
+  document.getElementById('loadingArea').style.display = "none";
+  document.getElementById('loginArea').style.display = "block";
   imageUpload.addEventListener('change', async () => {
     if (image) image.remove()
     if (canvas) canvas.remove()
@@ -29,22 +30,22 @@ async function start() {
     const detections = await faceapi.detectAllFaces(image).withFaceLandmarks().withFaceDescriptors()
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
-    const arr=[];
+    const arr = [];
     results.forEach((result, i) => {
       const box = resizedDetections[i].detection.box;
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
-      var j=result.toString();
-      j=j.substring(0,j.indexOf('(')-1);
+      var j = result.toString();
+      j = j.substring(0, j.indexOf('(') - 1);
       arr.push(j);
       drawBox.draw(canvas)
     });
 
-  
+
   })
 }
 
 function loadLabeledImages() {
-  const labels = ['Álvaro Odriozola','Andriy Lunin','Antonio Rüdiger','Aurélien Tchouaméni','Daniel Carvajal','Daniel Ceballos','David Alaba','Eden Hazard','Éder Gabriel Militão','Eduardo Camavinga','Federico Valverde','Ferland Mendy','Jesús Vallejo Lázaro','Karim Benzema','Lucas Vázquez','Luka Modric','Marco Asensio','Mariano Díaz','Nacho Fernández','Rodrygo Goes','Thibaut Courtois','Toni Kroos','Vinicius Junior'];
+  const labels = ['Álvaro Odriozola', 'Andriy Lunin', 'Antonio Rüdiger', 'Aurélien Tchouaméni', 'Daniel Carvajal', 'Daniel Ceballos', 'David Alaba', 'Eden Hazard', 'Éder Gabriel Militão', 'Eduardo Camavinga', 'Federico Valverde', 'Ferland Mendy', 'Jesús Vallejo Lázaro', 'Karim Benzema', 'Lucas Vázquez', 'Luka Modric', 'Marco Asensio', 'Mariano Díaz', 'Nacho Fernández', 'Rodrygo Goes', 'Thibaut Courtois', 'Toni Kroos', 'Vinicius Junior'];
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
