@@ -184,6 +184,11 @@ body {
     width: 100%;
 }
 
+.fileUploadArea .left .uploadedImage .imageArea canvas{
+    width: 100%;
+    margin-top: -100%;
+}
+
 .fileUploadArea .right {
     width: 40%;
     display: flex;
