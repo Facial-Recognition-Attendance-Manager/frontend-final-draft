@@ -45,12 +45,13 @@ async function start() {
 }
 
 function loadLabeledImages() {
-  const labels = ['Álvaro Odriozola', 'Andriy Lunin', 'Antonio Rüdiger', 'Aurélien Tchouaméni', 'Daniel Carvajal', 'Daniel Ceballos', 'David Alaba', 'Eden Hazard', 'Éder Gabriel Militão', 'Eduardo Camavinga', 'Federico Valverde', 'Ferland Mendy', 'Jesús Vallejo Lázaro', 'Karim Benzema', 'Lucas Vázquez', 'Luka Modric', 'Marco Asensio', 'Mariano Díaz', 'Nacho Fernández', 'Rodrygo Goes', 'Thibaut Courtois', 'Toni Kroos', 'Vinicius Junior'];
+  const labels = ['Abir Bhattacharya'];
+  // const labels = ['Abir Bhattacharya','Arkamitra Mukherjee','Padma Chhatait','Anusweta Das','Basudhara Mitra'];
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
-      for (let i = 1; i <= 1; i++) {
-        const img = await faceapi.fetchImage(`https://res.cloudinary.com/abir82/image/upload/v1656400239/LabelledImages/${label}/${i}.jpg`)
+      for (let i = 1; i <= 5; i++) {
+        const img = await faceapi.fetchImage(`https://res.cloudinary.com/dvzh3aj7y/image/upload/v1679750513/LabelledImages/${label}/${i}.jpg`);
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
       }
