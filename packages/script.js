@@ -39,14 +39,13 @@ async function start() {
       arr.push(j);
       drawBox.draw(canvas)
     });
-
-
+    document.getElementById('attendancelist').innerHTML=""+arr;
   })
 }
 
 function loadLabeledImages() {
-  const labels = ['Abir Bhattacharya'];
-  // const labels = ['Abir Bhattacharya','Arkamitra Mukherjee','Padma Chhatait','Anusweta Das','Basudhara Mitra'];
+  const labels = ['16500219064'];
+  // const labels = ['16500219064','16500219055','16500219039','16500219056','16500219050'];
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
@@ -55,7 +54,6 @@ function loadLabeledImages() {
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
       }
-
       return new faceapi.LabeledFaceDescriptors(label, descriptions)
     })
   )

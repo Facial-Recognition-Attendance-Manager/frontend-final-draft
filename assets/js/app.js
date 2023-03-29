@@ -1,3 +1,4 @@
+var completeListOfStudents;
 function login() {
   const dept_id=document.getElementById('dept_id').value;
   const password=document.getElementById('password').value;
@@ -8,12 +9,17 @@ function login() {
 
   axios.get(url).then(
     (response_one)=>{
-      console.log(response_one.data);
       if(response_one.data.status=="200")
       {
-        document.getElementById('loadingArea').style.display="none";
-        document.getElementById('container').style.display="none";
-        document.getElementById('fileUploadArea').style.display="flex";
+        const url2=`https://fram-backend.onrender.com/fetch_student?dept_id=${dept_id}`;
+        axios.get(url2).then(
+          (response_two)=>{
+            completeListOfStudents=response_two.data.data;
+            document.getElementById('loadingArea').style.display="none";
+            document.getElementById('container').style.display="none";
+            document.getElementById('fileUploadArea').style.display="flex";
+          }
+        )
       }
       else
       {
@@ -22,4 +28,9 @@ function login() {
       }
     }
   )
+}
+function submit(){
+  const listOfStudentsFromImage=document.getElementById('attendancelist').innerHTML.split(",");
+  console.log(listOfStudentsFromImage);
+  console.log(completeListOfStudents);
 }
