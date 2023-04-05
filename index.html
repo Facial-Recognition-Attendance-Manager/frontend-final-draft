@@ -22,13 +22,23 @@
                 Login for FRAM
             </div>
             <div class="inputArea">
-                <div class="label">Department ID</div><div class="inputs"><input type="text" id="dept_id"></div>
+                <div class="label">
+                    Department ID
+                </div>
+                <div class="inputs">
+                    <input type="text" id="dept_id">
+                </div>
             </div>
             <div class="inputArea">
-                <div class="label">Password</div><div class="inputs"><input type="password" id="password"></div>
+                <div class="label">
+                    Password
+                </div>
+                <div class="inputs">
+                    <input type="password" id="password">
+                </div>
             </div>
             <div class="buttonArea">
-                <button onclick="login()">Login</button>
+                <button onclick="login()" id="login-btn">Login</button>
             </div>
         </div>
         <div class="formArea" id="wrongPasswordArea">
@@ -36,7 +46,7 @@
                 Wrong Password
             </div>
             <div class="buttonArea">
-                <button>Back</button>
+                <button id="back-btn">Back</button>
             </div>
         </div>
     </div>

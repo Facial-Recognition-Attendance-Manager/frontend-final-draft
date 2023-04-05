@@ -25,10 +25,25 @@ function login() {
       {
         document.getElementById('loadingArea').style.display="none";
         document.getElementById('wrongPasswordArea').style.display="block";
+
       }
     }
   )
 }
+
+
+
+const backButton = document.getElementById("back-btn");
+const dept = document.getElementById("loginArea");
+const wrongPasswordArea = document.getElementById("wrongPasswordArea");
+
+backButton.addEventListener('click',function(){
+   if(wrongPasswordArea.style.display=="block"){
+      dept.style.display="block";
+      wrongPasswordArea.style.display="none";
+  }
+})
+
 function submit(){
   const listOfStudentsFromImage=document.getElementById('attendancelist').innerHTML.split(",");
   console.log(listOfStudentsFromImage);
