@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="./packages/face-api.min.js"></script>
     <script defer src="./packages/script.js"></script>
+    <script src="https://kit.fontawesome.com/ac99e793ac.js" crossorigin="anonymous"></script>
     <title>FRAM</title>
 </head>
 <body>
@@ -63,21 +64,34 @@
             </div>
         </div>
         <div class="right">
-            <div class="formArea">
-                <div class="heading">
+            <div class="formArea" id="formArea">
+                <div class="heading" id="submit-head">
                     Enter Details
                 </div>
-                <div class="inputArea">
-                    <div class="label">Date</div><div class="inputs"><input type="date"></div>
+                <div class="inputArea" id="date">
+                    <div class="label">Date</div><div class="inputs"><input type="date" id="class-date"></div>
                 </div>
-                <div class="inputArea">
-                    <div class="label">Class Name</div><div class="inputs"><input type="text"></div>
+                <div class="inputArea" id="cls-name">
+                    <div class="label">Class Name</div><div class="inputs"><input type="text" id="class-name"></div>
                 </div>
-                <div class="buttonArea">
-                    <button onclick="submit()">Submit</button>
+                <div class="buttonArea" id="submit-bttn">
+                    <button onclick="submit()" type="submit">Submit</button>
                 </div>
             </div>
+            <!-- <i class="fa-solid fa-check fa-beat" style="color: #3a8b0e;"></i> -->
+            <h2 id="success-msg"></h2>
         </div>
+
+        
+    </div>
+    <div id="retryArea">
+        <div id="response-text">
+            <h2>Request failed..try again later</h2>
+           
+        </div>
+            
+        <button id="retry">Try Again</button>
+        
     </div>
     <div class="AttendanceListHiddenComponent" id="attendancelist">
 
