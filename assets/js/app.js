@@ -54,8 +54,9 @@ backButton.addEventListener('click',function(){
 
 
 function submit(){
+  document.getElementById('attendancelist').style.display="block";
   const listOfStudentsFromImage=document.getElementById('attendancelist').innerHTML.split(",");
-  
+  document.getElementById('attendancelist').style.display="none";
   var present = "";
   var students="";
 
@@ -85,7 +86,7 @@ function submit(){
       if(res.status===200){
         console.log("success");
         document.getElementById('formArea').style.display="none";
-        // document.getElementsByTagName('.fa-beat').style.display="block";
+        document.getElementById('tick_mark').style.display="block";
         document.getElementById('success-msg').textContent="Attendance marked";
       }
       else{

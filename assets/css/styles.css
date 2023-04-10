@@ -9,6 +9,7 @@
 #fileUploadArea,
 #attendanceList,
 /* #loadingArea, */
+#tick_mark,
 #wrongPasswordArea {
     display: none;
 }

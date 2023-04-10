@@ -44,8 +44,7 @@ async function start() {
 }
 
 function loadLabeledImages() {
-  const labels = ['16500219064'];
-  // const labels = ['16500219064','16500219055','16500219039','16500219056','16500219050'];
+  const labels = ['16500219064','16500219055','16500219039','16500219056','16500219050'];
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
