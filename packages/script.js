@@ -40,6 +40,7 @@ async function start() {
       drawBox.draw(canvas)
     });
     document.getElementById('attendancelist').innerHTML=""+arr;
+    document.getElementById('attendancelist').style.display="none";
   })
 }
 
