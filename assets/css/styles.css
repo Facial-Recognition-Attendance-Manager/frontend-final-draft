@@ -27,6 +27,15 @@ body {
     align-items: center;
 }
 
+#mobile {
+    display: none;
+    width: 100%;
+}
+
+#mobile img {
+    width: 100%;
+}
+
 .loader {
     position: relative;
     width: 80px;
@@ -170,7 +179,7 @@ body {
     cursor: pointer;
 }
 
-.fileUploadArea .left .buttonArea button:hover{
+.fileUploadArea .left .buttonArea button:hover {
     background-color: #00421d;
 }
 
@@ -188,7 +197,7 @@ body {
     width: 100%;
 }
 
-.fileUploadArea .left .uploadedImage .imageArea canvas{
+.fileUploadArea .left .uploadedImage .imageArea canvas {
     width: 48%;
     position: absolute;
     margin-left: -48%;
@@ -210,7 +219,7 @@ body {
 }
 
 
-#retryArea{
+#retryArea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,18 +227,18 @@ body {
     height: 100vh;
 }
 
-.response{
+.response {
     width: 30%;
 }
 
-.response h2{
+.response h2 {
     color: white;
 }
 
-.response button{
-    padding:2%;
+.response button {
+    padding: 2%;
     border: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     background-color: #008037;
     width: 50%;
     color: white;
@@ -237,16 +246,16 @@ body {
     cursor: pointer;
 }
 
-.response  button:hover {
+.response button:hover {
     background-color: #00421d;
 }
 
-.fa-beat{
+.fa-beat {
     font-size: 25px;
     margin-right: 5px;
 }
 
-#successArea{
+#successArea {
     justify-content: center;
     align-items: center;
     width: 100%;
